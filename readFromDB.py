@@ -8,7 +8,7 @@ cursor1 = conn1.cursor()
 myquery1 = ("""
     SELECT  ApplicationNumber,dec_date,dec_month,fpd,fraud01,reporting_channel   
     from    dbo.vDailyRise7 
-    where   SystemCode='PDO' and dec_date >= '2016-05-01' and dec_date <= '2016-06-20' and pmt=1 and reporting_channel='Direct Mail' and reporting_customer_type='new'
+    where   SystemCode='PDO' and dec_date >= '' and dec_date <= '' and pmt=1 and reporting_channel='Direct Mail' and reporting_customer_type='new'
 """)
 cursor1.execute(myquery1)
 app_data = pd.DataFrame(cursor1.fetchall())
@@ -19,7 +19,7 @@ ipdb.set_trace()
 # DWO_live (linking between ApplicationNumber and appID in vendors)
 # EDW Server -- contains PDO_Live, DWO_live, etc
 EDW_server = "PRDBISEDW04.exclaim-prd.com"
-EDW_user = 'ElevateSQLUser_R'
+EDW_user = ''
 EDW_passwd = 'Loans123!'
 conn2 = pymssql.connect(EDW_server,EDW_user,EDW_passwd,"DWO_Live")
 cursor2 = conn2.cursor()
